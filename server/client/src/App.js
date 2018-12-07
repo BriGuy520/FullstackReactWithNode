@@ -3,7 +3,9 @@ import React from 'react';
 
 const App = () => {
   return (
-    <div>React App</div>
+    <div>
+      <a href="/auth/google">Sign In with Google</a>
+    </div>
   );
 }
 
