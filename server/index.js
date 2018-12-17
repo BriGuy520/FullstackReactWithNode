@@ -8,6 +8,7 @@ require('./models/User');
 require('./models/Survey');
 require('./services/passport');
 
+mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI);
 
 const app = express();
@@ -26,7 +27,7 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
-require('./Routes/SurveyRoutes')(app);
+require('./routes/SurveyRoutes')(app);
 
 if(process.env.NODE_ENV === 'production'){
   // Express will serve up production assets like our main.js or main.css file
